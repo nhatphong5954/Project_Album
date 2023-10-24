@@ -11,7 +11,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     GridView gridview;
     TextView txtSoloMsg;
     ImageView imgSoloPhoto;
