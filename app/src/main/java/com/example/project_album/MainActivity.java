@@ -2,19 +2,24 @@ package com.example.project_album;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
+    GridView gridview;
     TextView txtSoloMsg;
     ImageView imgSoloPhoto;
     Button btnSoloBack, btnDelete;
     Bundle myOriginalMemoryBundle;
-    String[] items={"Image 1","Image 2"};
-    Integer[] largeImages;
+    String[] items={"Image 1","Image 2","Image 3","Image 4"};
+    Integer[] thumbnails = {R.drawable.lake_1, R.drawable.lake_2, R.drawable.lake_3, R.drawable.mountain_1};
+    Integer[] largeImages = {R.drawable.lake_1, R.drawable.lake_2, R.drawable.lake_3, R.drawable.mountain_1};
 
 
 
@@ -22,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        gridview = (GridView) findViewById(R.id.gv_ListItems);
+        gridview.setAdapter(new MyImageAdapter(this, thumbnails));
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) { showBigScreen(position); }
+        });
     }
     private void showBigScreen(int position) {
         // show the selected picture as a single frame in the second layout
