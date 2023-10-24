@@ -26,8 +26,8 @@ public class MyImageAdapter extends BaseAdapter {
 // no previous version of thumbnail held in the scrapview holder define entry in res/values/dimens.xml for grid height,width in dips <dimen name="gridview_size">100dp</dimen>
 // setLayoutParams will do conversion to physical pixels
             imageView = new ImageView(context);
-            int gridsize = context.getResources().getDimensionPixelOffset(R.dimen.gridview_size);
-            imageView.setLayoutParams(new GridView.LayoutParams(gridsize, gridsize)); imageView.setScaleType(ImageView.ScaleType.FIT_XY); imageView.setPadding(5, 5, 5, 5);
+            int gridSize = context.getResources().getDimensionPixelOffset(R.dimen.gridview_size);
+            imageView.setLayoutParams(new GridView.LayoutParams(gridSize, gridSize)); imageView.setScaleType(ImageView.ScaleType.FIT_XY); imageView.setPadding(5, 5, 5, 5);
         }
         else { imageView = (ImageView) convertView; }
         imageView.setImageResource(smallImages[position]); imageView.setId(position);
