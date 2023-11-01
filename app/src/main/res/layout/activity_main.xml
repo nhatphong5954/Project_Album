@@ -11,6 +11,11 @@
     android:text="Scrool screen, tap to choose"
     android:textColor="#ffffffff"
     android:textSize="20sp" />
+    <Button
+        android:id="@+id/btn_album"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Album"/>
 <GridView android:id="@+id/gv_ListItems"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,4 +26,6 @@
     android:numColumns="auto_fit"
     android:stretchMode="columnWidth"
     android:verticalSpacing="10dp" />
+
+
     </LinearLayout>
